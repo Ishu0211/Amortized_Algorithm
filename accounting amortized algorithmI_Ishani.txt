@@ -1,0 +1,19 @@
+n = int(input("enter the number of operations to be performed n= "))
+push_amo = 2
+pop_amo = 0
+actual_cost = 1
+amo_total = 0
+credit = 0
+print("Item\tAmortized cost\tActual Cost\tCredit ")
+for i in range(1,n+1):
+    op = input("enter the operation= ")
+    if op == "push":
+        credit = credit + (push_amo-actual_cost)
+        amo_total = amo_total+push_amo
+        print(i,"\t\t",push_amo,"\t\t\t\t",actual_cost,"\t\t\t\t",credit)
+    elif op == "pop":
+        credit = credit + (pop_amo-actual_cost)
+        amo_total = amo_total+pop_amo
+        print(i,"\t\t",pop_amo,"\t\t\t\t",actual_cost,"\t\t\t\t",credit)
+        
+print("total amortized cost = ",amo_total)
